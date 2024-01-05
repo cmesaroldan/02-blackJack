@@ -14,8 +14,8 @@ let puntosJugador = 0,
 
 
 //Referencias HTML
-const btnPedir = document.querySelector('#btnPedir');
-const btnPuntosJugador = document.querySelector('small').innerText;
+const btnPedir =         document.querySelector('#btnPedir');
+const puntosHTML = document.querySelectorAll('small');
 
 const crearDeck = () =>{
 
@@ -80,10 +80,7 @@ btnPedir.addEventListener('click', () =>{
     
     puntosJugador = puntosJugador + valorCarta( carta );
 
-    btnPuntosJugador = puntosJugador;
-
-    
-
+    puntosHTML[0].innerText = puntosJugador;
 
 });
 
