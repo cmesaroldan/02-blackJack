@@ -16,10 +16,12 @@ let puntosJugador = 0,
 //Referencias HTML
 const btnPedir =         document.querySelector('#btnPedir');
 const btnDetener =       document.querySelector('#btnDetener');
+const bntNuevoJuego =    document.querySelector('#btnNuevo');
 
 const puntosHTML = document.querySelectorAll('small');
 const divCartasJugador = document.querySelector('#jugador-cartas');
-const divCartasComputadora = document.querySelector('#computadora-cartas')
+const divCartasComputadora = document.querySelector('#computadora-cartas');
+
 
 const crearDeck = () =>{
 
@@ -160,6 +162,31 @@ btnDetener.addEventListener( 'click', () =>{
     btnPedir.disabled = true;
     btnDetener.disabled = true;
     turnoComputadora( puntosJugador );
+
+
+});
+
+bntNuevoJuego.addEventListener('click', () =>{
+
+    console.clear();
+    deck = [];
+    deck = crearDeck();
+
+    puntosComputadora = 0;
+    puntosJugador = 0;
+
+    puntosHTML[0].innerText = 0;
+    puntosHTML[1].innerText = 0;
+
+    divCartasJugador.innerHTML = ''; //Elimina las cartas que se tengan
+    divCartasComputadora.innerHTML = '';
+
+    btnPedir.disabled = false;
+    btnDetener.disabled = false;
+    
+    
+
+
 
 
 });
